@@ -7,7 +7,7 @@ import com.peerbitskuldeep.newzpl.jsondata.Article
 
 @Database(
     entities = [Article::class],
-    version = 1 //if we make changes in some points then update the version
+    version = 2 //if we make changes in some points then update the version
 )
 @TypeConverters(Converters::class)
 abstract class ArticleDatabase : RoomDatabase(){

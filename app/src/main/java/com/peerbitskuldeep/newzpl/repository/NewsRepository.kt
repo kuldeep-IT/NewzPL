@@ -7,7 +7,7 @@ import com.peerbitskuldeep.newzpl.jsondata.Article
 class NewsRepository(
     val db: ArticleDatabase
 ) {
-    //make network call request
+
     suspend fun getBreakingNews(countryCode: String, pageNumber: Int) =
         RetrofitInstance.api.getBreakingNews(countryCode, pageNumber)
 

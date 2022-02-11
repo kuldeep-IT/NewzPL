@@ -22,10 +22,15 @@
         <entry key="..\:/Peerbits Projects/NewzPL/app/src/main/res/layout/fragment_search_news.xml" value="0.1" />
         <entry key="..\:/Peerbits Projects/NewzPL/app/src/main/res/layout/item_article_preview.xml" value="0.22" />
         <entry key="..\:/Peerbits Projects/NewzPL/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.1921875" />
+        <entry key="app/src/main/res/drawable/ic_breaking_news.xml" value="0.107" />
+        <entry key="app/src/main/res/drawable/ic_placeholder_new.xml" value="0.107" />
         <entry key="app/src/main/res/layout/activity_news.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_article.xml" value="0.1408514492753623" />
+        <entry key="app/src/main/res/layout/fragment_breaking_news.xml" value="0.165625" />
         <entry key="app/src/main/res/layout/fragment_saved_news.xml" value="0.1408514492753623" />
         <entry key="app/src/main/res/layout/fragment_search_news.xml" value="0.16304347826086957" />
+        <entry key="app/src/main/res/layout/item_article_preview.xml" value="0.1" />
+        <entry key="app/src/main/res/menu/bottom_navigation_menu.xml" value="0.1" />
       </map>
     </option>
   </component>

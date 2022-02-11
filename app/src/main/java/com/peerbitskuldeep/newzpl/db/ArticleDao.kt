@@ -14,7 +14,6 @@ interface ArticleDao {
     fun getAllArticles(): LiveData<List<Article>> //it won't be suspend function because its return live data object
 
     //Live data -> unable us to subscribe changes in live data and whenever its changes livedata will notify all of its observers
-
     @Delete
     suspend fun deleteArticle(article: Article)
 }
