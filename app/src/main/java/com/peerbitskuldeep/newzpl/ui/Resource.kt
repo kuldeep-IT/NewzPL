@@ -1,6 +1,6 @@
 package com.peerbitskuldeep.newzpl.ui
 
-//for network responses
+
 sealed class Resource<T>(
     val data: T? = null,
     val message: String? = null

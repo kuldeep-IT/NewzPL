@@ -1,7 +1,10 @@
 package com.peerbitskuldeep.newzpl.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -25,17 +28,27 @@ class NewsActivity : AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_news)
 
-//        setContentView(R.layout.activity_news)
-
         val repository = NewsRepository(ArticleDatabase(this))
         val viewModelProviderFactory = NewsViewModelProviderFactory(repository)
         vm = ViewModelProvider(this,viewModelProviderFactory).get(NewsViewModel::class.java)
 
-
-//        val newzNavHostFragment = supportFragmentManager.findFragmentById(R.id.newsNavHostFragment) as
-
-//        bottomNavigationView.setupWithNavController(newsNavHostFragment.navController)
-        bottomNavigationView.setupWithNavController(newsNavHostFragment.findNavController())
-
+        binding.bottomNavigationView.setupWithNavController(newsNavHostFragment.findNavController())
     }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.binding_menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        when(item.itemId){
+            R.id.bindingDetails -> {
+                startActivity(Intent(this@NewsActivity, PageActivity::class.java))
+            }
+        }
+
+        return super.onOptionsItemSelected(item)
+    }
+
 }

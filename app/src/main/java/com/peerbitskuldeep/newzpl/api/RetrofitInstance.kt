@@ -7,7 +7,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.create
 
-//retrofit singleton class for access every where in project
 class RetrofitInstance {
 
     companion object{

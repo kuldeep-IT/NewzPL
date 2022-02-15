@@ -75,12 +75,11 @@ class SearchNewsFragment: Fragment(R.layout.fragment_search_news) {
             )
         }*/
 
-        var job: Job? = null //for delay
+        var job: Job? = null
         binding.etSearch.addTextChangedListener { editable ->
 
             job?.cancel()
             job = MainScope().launch {
-
                 delay(API_DELAY)
                 editable?.let {
                     if (editable.toString().isNotEmpty()){

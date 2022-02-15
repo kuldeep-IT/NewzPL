@@ -22,7 +22,7 @@ interface NewsAPI {
 
     ): Response<NewsResponse>
 
-    //search
+
     @GET("/v2/everything")
     suspend fun searchForNews(
 

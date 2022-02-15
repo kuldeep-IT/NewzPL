@@ -7,6 +7,7 @@ import com.peerbitskuldeep.newzpl.jsondata.Article
 import com.peerbitskuldeep.newzpl.jsondata.NewsResponse
 import com.peerbitskuldeep.newzpl.repository.NewsRepository
 import com.peerbitskuldeep.newzpl.ui.Resource
+import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import retrofit2.Response
 
@@ -67,9 +68,7 @@ class NewsViewModel(
     }
 
     fun saveArticle(article: Article) = viewModelScope.launch {
-
         newsRepository.upsert(article)
-
     }
 
     fun getSavedNews() = newsRepository.getSavedNews()

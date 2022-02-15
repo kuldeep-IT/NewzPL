@@ -14,7 +14,7 @@ data class Article(
     val content: String,
     val description: String,
     val publishedAt: String,
-    val source: Source, //use TypeConverter because Datatype is Source not a primitive
+    val source: Source,
     val title: String,
     val url: String,
     val urlToImage: String

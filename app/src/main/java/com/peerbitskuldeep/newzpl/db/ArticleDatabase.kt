@@ -16,13 +16,11 @@ abstract class ArticleDatabase : RoomDatabase(){
 
     companion object{
 
-        @Volatile //others thread immediately see if thread changes this instance
+        @Volatile
         private var instance: ArticleDatabase? = null
 
         private val LOCK = Any()
 
-        //invoke fun -> called whenever we create an instance of database
-        //can't be accessed by other thread at same time
         operator fun invoke(context: Context) = instance ?: synchronized(LOCK)
         {
             instance ?: createDatabase(context).also {

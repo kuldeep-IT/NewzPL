@@ -55,18 +55,6 @@ class BreakingNewsFragment: Fragment() {
             }
         }
 
-    /*    newsAdapter.onItemClickLstnr =  {
-            var bundle = Bundle().apply {
-                putSerializable("article",it)
-            }
-            Toast.makeText(requireContext(), it.description, Toast.LENGTH_SHORT).show()
-            findNavController().navigate(
-                R.id.action_breakingNewsFragment_to_articleFragment,
-                bundle
-            )
-        }*/
-
-        //Get a LifecycleOwner that represents the Fragment's View lifecycle
         viewModel.breakingNews.observe(viewLifecycleOwner, Observer {response ->
             when(response){
                 is Resource.Success -> {
@@ -91,61 +79,6 @@ class BreakingNewsFragment: Fragment() {
 
         return binding.root
     }
-
-
-//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-//        super.onViewCreated(view, savedInstanceState)
-//
-//
-//        viewModel = (activity as NewsActivity).vm
-//        setUpRecyclerView()
-//
-//
-//        newsAdapter.setOnItemClickLstnr {
-//
-//            var bundle = Bundle().apply {
-//                putSerializable("article",it)
-//            }
-//            findNavController().navigate(
-//                R.id.action_breakingNewsFragment_to_articleFragment,
-//                bundle
-//            )
-//
-//        }
-//
-//
-//        //Get a LifecycleOwner that represents the Fragment's View lifecycle
-//        viewModel.breakingNews.observe(viewLifecycleOwner, Observer {response ->
-//
-//            when(response){
-//
-//                is Resource.Success -> {
-//                    hideProgressBar()
-//                    response.data?.let { newsResponse ->
-//
-//                        newsAdapter.differ.submitList(newsResponse.articles)
-//
-//                    }
-//                }
-//
-//                is Resource.Error -> {
-//                    hideProgressBar()
-//                    response.message?.let{message ->
-//
-//                        Log.e("TAG", "BreakingNewsFragment: $message", )
-//
-//                    }
-//                }
-//
-//                is Resource.Loading -> {
-//                    showProgressBar()
-//                }
-//
-//            }
-//
-//        })
-//
-//    }
 
     private fun setUpRecyclerView(){
 
